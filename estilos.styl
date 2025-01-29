@@ -3,6 +3,7 @@ color-secundario = #fafafa
 color-youtube = #8f3434
 color-fuente = #767676
 color-bordes = #e5e5e5
+color-footer = #232323
 
 body
     background-color rgb(255, 255, 255)
@@ -71,6 +72,9 @@ h2
         border-radius 10px
         margin 0 20px
         background-color #f9f9f9
+        p
+            color color-primario
+            font-weight: bold
         #serv-img
             background-color black
             border-radius 10px
@@ -208,21 +212,25 @@ h2
         text-align center
         h3
             margin-block 50px
+            font-size: 25px
 
         p
             text-align justify
             margin-inline 15%
             margin-block: 100px
+            font-size: 25px
 
         #sub-boton
             background-color color-secundario
-            color color-primario
+            color color-fuente
             border none
             border-radius 5px
             width 120px
             height 40px
             font-weight bold
             font-size 15px
+            &:hover
+                color color-primario
 
 /*Historias de vida*/
 .hist-vida 
@@ -262,7 +270,7 @@ h2
     display flex
     .mapa
         margin 10px
-        background-color: green
+        background-color: black
         width: 70%
         height 350px
         border-radius 10px
@@ -289,3 +297,24 @@ h2
 
             p
                 margin: 1px 0; 
+
+.footer
+    background-color color-footer
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 90px
+    color color-secundario
+    margin-inline -80px
+    
+
+    .izquierda, .derecha
+        width: 50%
+        text-align: center
+
+    .izquierda
+        padding-left: 10px
+
+    .derecha
+        padding-right: 10px
