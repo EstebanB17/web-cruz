@@ -1,17 +1,24 @@
 body {
-  background-color: #d1cece;
-  margin-inline: 80px;
+  background-color: #fff;
+  padding-inline: 80px;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+  color: #dc090f;
+  text-align: center;
+  margin-block: 40px;
 }
 /* Barra de navegación */
 .info-busqueda {
   display: flex;
-  background-color: #f00;
+  background-color: #dc090f;
   width: 100%;
   height: 50px;
   align-items: center;
 }
 .info-busqueda p {
-  color: #fff;
+  color: #fafafa;
   margin-left: 40px;
 }
 .info-busqueda #bar-busqueda {
@@ -19,14 +26,14 @@ body {
 }
 .navbar {
   height: 100px;
-  background-color: #fff;
-  border-bottom: 2px solid #f00;
+  background-color: #fafafa;
+  border-bottom: 2px solid #dc090f;
 }
 .navbar #btn-donar {
   border-radius: 20px;
   border: none;
-  background-color: #f00;
-  color: #fff;
+  background-color: #dc090f;
+  color: #fafafa;
   padding: 5px;
   width: 100px;
   font-weight: bold;
@@ -42,6 +49,7 @@ body {
   background-color: #000;
   width: 100%;
 }
+/* Servicios */
 .servicios {
   display: flex;
   flex-direction: row;
@@ -57,10 +65,8 @@ body {
   align-items: center;
   width: 400px;
   height: 300px;
-  border: 1px solid #ccc;
   border-radius: 10px;
   margin: 0 20px;
-  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
   background-color: #f9f9f9;
 }
 /*Ultimas Noticias*/
@@ -69,12 +75,13 @@ body {
   width: 100%;
   height: 450px;
   border: 1px solid #f00;
-  background-color: #ff0;
 }
 .contenedor-np .noticias {
   border: 1px solid #f00;
   width: 70%;
-  padding: 10px;
+}
+.contenedor-np .noticias padding 10px #ultima-noticia {
+  border: 1px solid #000;
 }
 .contenedor-np .preguntas {
   display: flex;
@@ -82,27 +89,35 @@ body {
   width: 30%;
   justify-content: center;
   align-items: center;
-  background-color: #f00;
 }
 .contenedor-np .preguntas ul {
   list-style-type: none;
   padding: 0;
-  border: 2px solid #008000;
+  border: 2px solid #e5e5e5;
   border-radius: 10px;
   width: 90%;
   height: 100%;
   margin-bottom: 40px;
+  text-align: center;
 }
 .contenedor-np .preguntas ul li {
-  border-bottom: 1px solid #008000;
+  border-bottom: 1px solid #e5e5e5;
   padding: 15px 0;
+}
+.contenedor-np .preguntas ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #8b8b8b;
+}
+.contenedor-np .preguntas ul li a:hover {
+  color: #dc090f;
 }
 .contenedor-np .preguntas #ultima-noticia {
   width: 50%;
   height: 100%;
-  background-color: #fff;
+  background-color: #fafafa;
 }
-/*Ultimas campañas*/
+/* Ultimas campañas */
 .campanas {
   display: flex;
   flex-direction: row;
@@ -118,31 +133,30 @@ body {
   align-items: center;
   width: 590px;
   height: 500px;
-  border: 1px solid #ccc;
   border-radius: 10px;
   margin: 0 10px;
   box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
   background-color: #f9f9f9;
 }
-/*Youtube*/
+/* Youtube */
 .yt-seccion {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  background-color: #f00;
-  color: #fff;
+  background-color: #8f3434;
+  color: #fafafa;
   height: 500px;
   margin-top: 50px;
+  margin-inline: -80px;
 }
 .yt-seccion #cont-video {
   width: 50%;
   text-align: center;
-  border: 1px solid #000;
   position: relative;
 }
 .yt-seccion #cont-video #video {
-  height: 38%;
-  width: 40%;
+  height: 43%;
+  width: 45%;
   background-color: #fff;
   position: absolute;
   top: 50%;
@@ -152,23 +166,29 @@ body {
 .yt-seccion #desc-video {
   width: 50%;
   padding: 1rem;
+  text-align: center;
+}
+.yt-seccion #desc-video h3 {
+  margin-block: 50px;
 }
 .yt-seccion #desc-video p {
   text-align: justify;
+  margin-inline: 15%;
+  margin-block: 100px;
 }
 .yt-seccion #desc-video #sub-boton {
-  background-color: #fff;
-  color: #f00;
+  background-color: #fafafa;
+  color: #dc090f;
   border: none;
   border-radius: 5px;
   width: 120px;
   height: 40px;
   font-weight: bold;
+  font-size: 15px;
 }
 /*Historias de vida*/
 .hist-vida {
   display: flex;
-  background-color: #9d00ff;
   justify-content: center;
   gap: 300px;
 }
@@ -176,7 +196,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: #fafafa;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
@@ -220,7 +240,7 @@ body {
   height: 350px;
 }
 .ubicacion .direccion #dir {
-  background-color: #fff;
+  background-color: #fafafa;
   box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
   border-radius: 10px;
   width: 100%;
@@ -229,7 +249,7 @@ body {
   box-sizing: border-box;
 }
 .ubicacion .direccion #dir h3 {
-  color: #f00;
+  color: #dc090f;
   margin-bottom: 10px;
 }
 .ubicacion .direccion #dir p {
