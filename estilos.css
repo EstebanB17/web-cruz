@@ -10,26 +10,34 @@ h2 {
   margin-block: 40px;
 }
 /* Barra de navegación */
-.info-busqueda {
+.head {
+  margin-inline: -80px;
+}
+.head .info-busqueda {
   display: flex;
   background-color: #dc090f;
   width: 100%;
   height: 50px;
   align-items: center;
+  justify-content: space-between;
 }
-.info-busqueda p {
+.head .info-busqueda p {
   color: #fafafa;
   margin-left: 40px;
 }
-.info-busqueda #bar-busqueda {
+.head .info-busqueda #bar-busqueda {
   color: #f00;
+  margin-right: 70px;
 }
-.navbar {
+.head .navbar {
   height: 100px;
   background-color: #fafafa;
   border-bottom: 2px solid #dc090f;
 }
-.navbar #btn-donar {
+.head .logo-cruz {
+  justify-content: space-between;
+}
+.head .logo-cruz #btn-donar {
   border-radius: 20px;
   border: none;
   background-color: #dc090f;
