@@ -1,7 +1,7 @@
 color-primario = #dc090f
 color-secundario = #fafafa
 color-youtube = #8f3434
-color-fuente = #8b8b8b
+color-fuente = #767676
 color-bordes = #e5e5e5
 
 body
@@ -64,7 +64,6 @@ h2
         margin-buttom 20px
 
     .cont-servicios
-        display flex
         justify-content center
         align-items center
         width 400px
@@ -72,53 +71,91 @@ h2
         border-radius 10px
         margin 0 20px
         background-color #f9f9f9
+        #serv-img
+            background-color black
+            border-radius 10px
+            margin 10px auto
+            width 90%
+            height 220px
 
 /*Ultimas Noticias*/
 .contenedor-np
     display flex
     width 100%
     height 450px
-    border 1px solid red
     .noticias
-        border 1px solid red
+        display grid
+        grid-template-columns 50% 50%
+        gap 10px
         width 70%
         padding 10px
-            #ultima-noticia
-                border 1px solid black
 
-    .preguntas
-        display: flex;
-        flex-direction: column;
-        width 30%
-        justify-content: center;
-        align-items: center;
-        ul
-            list-style-type none
-            padding 0
-            border: 2px solid color-bordes
-            border-radius: 10px
-            width: 90%
-            height 100%
-            margin-bottom 40px
-            text-align center
+        .ultima-noticia
+            border-radius 10px
+            grid-column 1 / 2
+            height: 100%
+            color color-fuente
+            width 95%
+            background-color color-secundario
+            h3
+                margin-left 15px
 
-            li
-                border-bottom 1px solid color-bordes
-                padding 15px 0
+            p
+                margin-left 15px
                 
-                a   
-                   text-decoration none
-                   font-weight bold
-                   color color-fuente
-                   &:hover
-                        color color-primario
+            #not-img-nueva
+                background-color rgb(0, 0, 0)
+                margin 10px auto
+                width 100%
+                height 300px
+                border-radius 10px
 
+        .cont-noticias
+            align-content center
+            .li-noticias
+                background-color color-secundario
+                border-radius 10px
+                color color-fuente
+
+                margin 10px
+                padding 10px
+                box-sizing border-box
+
+                #not-img
+                    background-color black
+                    border-radius 10px
+                    margin 10px auto
+                    width 100%
+                    height 120px
+                    h3
+                        margin-left 10px
+
+.preguntas
+    display: flex;
+    flex-direction: column;
+    width 30%
+    justify-content: center;
+    align-items: center;
+    ul
+        list-style-type none
+        padding 0
+        border: 2px solid color-bordes
+        border-radius: 10px
+        width: 90%
+        height 100%
+        margin-bottom 40px
+        text-align center
+
+        li
+            border-bottom 1px solid color-bordes
+            padding 15px 0
                 
-
-        #ultima-noticia
-            width 50%
-            height 100%
-            background-color: color-secundario
+            a   
+                text-decoration none
+                font-weight bold
+                color color-fuente
+                &:hover
+                    color color-primario
 
 /* Ultimas campañas */
 .campanas
@@ -228,6 +265,7 @@ h2
         background-color: green
         width: 70%
         height 350px
+        border-radius 10px
 
     .direccion
         width: 30%;
