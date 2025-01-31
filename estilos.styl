@@ -118,6 +118,16 @@ h2
     h2
         margin-bottom 20px
 
+
+    .servicios
+    display flex
+    flex-direction row
+    align-items center
+    text-align center
+
+    h2
+        margin-bottom 20px
+
     .cont-servicios
         justify-content center
         align-items center
@@ -128,13 +138,32 @@ h2
         background-color #f9f9f9
         p
             color color-primario
-            font-weight bold
+            font-weight: bold
+        
+        h3
+            
+            a
+                text-decoration none
+                color color-primario
+                font-weight bold
+                &:hover
+                    color color-fuente
+            
         #serv-img
             background-color black
-            border-radius radio
+            border-radius 10px
             margin 10px auto
             width 90%
             height 220px
+            display flex
+            justify-content center
+            align-items center
+            overflow hidden
+            img
+                width 100%
+                height 100%
+                object-fit cover
+
 
 /*Ultimas Noticias*/
 .contenedor-np

@@ -114,6 +114,14 @@ h2 {
 .servicios h2 {
   margin-bottom: 20px;
 }
+.servicios .servicios,
+.servicios display flex,
+.servicios flex-direction row,
+.servicios align-items center,
+.servicios text-align center,
+.servicios h2 {
+  margin-bottom: 20px;
+}
 .servicios .cont-servicios {
   justify-content: center;
   align-items: center;
@@ -127,12 +135,29 @@ h2 {
   color: #dc090f;
   font-weight: bold;
 }
+.servicios .cont-servicios h3 a {
+  text-decoration: none;
+  color: #dc090f;
+  font-weight: bold;
+}
+.servicios .cont-servicios h3 a:hover {
+  color: #767676;
+}
 .servicios .cont-servicios #serv-img {
   background-color: #000;
-  border-radius: 16px;
+  border-radius: 10px;
   margin: 10px auto;
   width: 90%;
   height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.servicios .cont-servicios #serv-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /*Ultimas Noticias*/
 .contenedor-np {

@@ -4,26 +4,11 @@ get_header();
 <main>
     <section class="cont-img-main">
         <div id="main-img">img</div>
-    </section>    
+    </section>
+    
     <h2>Nuestros Servicios</h2>
-    <section class="servicios">
-        <div class="cont-servicios" id="serv-1">
-            <div id="serv-img"></div>
-            <p>Educación</p> 
-        </div>
-        <div class="cont-servicios" id="serv-2">
-            <div id="serv-img"></div>
-            <p>IPS</p>  
-        </div>
-        <div class="cont-servicios" id="serv-3">
-            <div id="serv-img"></div>
-            <p>Apoyo a Empresas y Entidades</p>
-        </div>
-        <div class="cont-servicios" id="serv-4">
-            <div id="serv-img"></div>
-            <p>Servicios Humanitarios</p>  
-        </div>
-    </section><br>
+    <?php mostrar_servicios_por_categoria('servicios'); ?>
+
 
     <h2>Últimas Noticias</h2>
     <section class="contenedor-np"> 
