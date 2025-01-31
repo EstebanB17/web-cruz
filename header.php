@@ -16,8 +16,8 @@ $id_pagina = get_queried_object_id();
     <?php 
     wp_body_open();
     ?>
-    <header>
-        <section class="nav-head">
+        <header>
+            <section class="nav-head">
                 <div class="info-busqueda">
                     <p>Email: caqueta@cruzrojacolombiana.org</p>
                     <p>Teléfonos: 608 435 2929 - 323 266 4736</p>
@@ -31,38 +31,17 @@ $id_pagina = get_queried_object_id();
                     <div class="menu-container">
                         <button id="btn-donar">Donar</button>
                         <div class="menu">
-                            <a href="#">Conócenos</a>
-                            <a href="#">Nuestros Servicios</a>
-                            <a href="#">Voluntariado</a>
-                            <a href="#">Biblioteca</a>
-                            <a href="#">Noticias</a>
-                            <a href="#">Contacto</a>
+                            <?php 
+                            wp_nav_menu(array(
+                                'theme_location' => 'menu_principal',
+                                'container' => false, 
+                                'menu_class' => '', 
+                                'items_wrap' => '%3$s',
+                            ));
+                            ?>
                         </div>
                     </div>
                 </div>
-        </section>
-        <?php the_custom_logo(); ?>
-        <?php
-        /*wp_nav_menu(
-            array(
-                "theme_location" => "menu_principal",
-                "menu_id" => "menuPrincipal",
-                "container" => "nav",
-                "container_class" => "menus",
-            )
-        );
-        ?>
-        <?php 
-        wp_nav_menu(
-            array(
-                "theme_location" => "menu_app",
-                "container_class" => "onlyDesktop menus",
-                "menu_id" => "menuSecundario"
-            )
-        );*/
-        ?>
-        <!-- Este es un comentario en HTML <label for="menuMovil" class="btnMenuMovil">
-            <span></span><span></span><span></span>
-        </label>
-        <input type="checkbox" id="menuMovil"> -->
+            </section>
+        </header>
     </header>

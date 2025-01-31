@@ -4,8 +4,7 @@ get_header();
 <main>
     <section class="cont-img-main">
         <div id="main-img">img</div>
-    </section>
-    
+    </section>    
     <h2>Nuestros Servicios</h2>
     <section class="servicios">
         <div class="cont-servicios" id="serv-1">
@@ -27,8 +26,8 @@ get_header();
     </section><br>
 
     <h2>Últimas Noticias</h2>
-    <section class="contenedor-np">
-        <div class="noticias">
+    <section class="contenedor-np"> 
+            <div class="noticias">
             <div class="ultima-noticia">
                 <div id="not-img-nueva"></div>
                 <h3>Noticia Nueva!</h3>
@@ -64,7 +63,7 @@ get_header();
     <h2>Ultimas Campañas</h2>
     <section class="campanas">
         <div class="cont-campanas" id="campana-1">
-         
+            
         </div>
         <div class="cont-campanas" id="campana-2">
             
@@ -136,7 +135,7 @@ get_header();
         <br>
     </section>
 <?php
-    /*if (have_posts()) : 
+    if (have_posts()) : 
         while (have_posts()) : the_post();
             $ocultar_titulo = get_post_meta( get_the_ID(), '_ocultar_titulo', true );
             // Mostrar el título solo si el checkbox no está marcado
@@ -152,7 +151,7 @@ get_header();
             
             the_content(); // Muestra el contenido de la página o entrada actual
         endwhile;
-    endif;*/
+    endif;
 ?>
 </main>
 <?php

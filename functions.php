@@ -5,6 +5,55 @@ function cargar_estilos_footer() {
 add_action('wp_footer', 'cargar_estilos_footer');
 
 
+function hbp_register_menus() {
+    register_nav_menus(
+        array(
+            'menu_principal' => 'Menú Principal',
+        )
+    );
+}
+add_action('after_setup_theme', 'hbp_register_menus');
+
+function mi_tema_soporte() {
+    add_theme_support( 'post-thumbnails' );
+}
+add_action( 'after_setup_theme', 'mi_tema_soporte' );
+
+
+// En tu archivo functions.php o plantilla
+function mostrar_servicios() {
+    // Query para obtener las entradas o páginas que deseas mostrar
+    $args = array(
+        'post_type'      => 'post', // Cambia 'post' por el tipo de post que quieres mostrar
+        'posts_per_page' => -1, // Mostrar todas las entradas
+        'category_name'  => 'servicios' // Si quieres filtrar por categoría
+    );
+    $the_query = new WP_Query( $args );
+
+    if ( $the_query->have_posts() ) {
+        echo '<section class="servicios">';
+        while ( $the_query->have_posts() ) {
+            $the_query->the_post();
+            ?>
+            <div class="cont-servicios">
+                <div id="serv-img"><?php the_post_thumbnail(); ?></div>
+                <p><?php the_title(); ?></p>
+            </div>
+            <?php
+        }
+        echo '</section>';
+        /* Restaura la query principal */
+        wp_reset_postdata();
+    } else {
+        // Si no hay entradas, muestra un mensaje
+        echo 'No hay servicios disponibles.';
+    }
+}
+
+// Llama a la función en tu plantilla
+add_action( 'your_action_hook', 'mostrar_servicios' );
+
+
 /*function hbp_assets(){
     wp_register_style('google-pre', "https://fonts.googleapis.com", array(),false,'all');
     wp_register_style('google-pre1', "https://fonts.gstatic.com", array(),false,'all');
