@@ -20,9 +20,10 @@ h2
 /* Barra de navegación */
 .nav-head
     position fixed
-    margin-inline -80px
+    top 0
+    left 0
     width 100%
-    z-index: 1000;
+    z-index 1000
 
     .info-busqueda
         display flex
@@ -98,14 +99,17 @@ h2
                         color color-primario
 
 /* Contenido */
+
 .cont-img-main
-    display: flex;
-    justify-content: center;
-    width: 100% 
-    height: 500px
+    margin-top 165px
+    display: flex
+    justify-content: center
+    width 100%
+    height 450px
+    background-color red
+
 
     #main-img
-        background-color black
         width 100%
 
 /* Servicios */
@@ -117,7 +121,6 @@ h2
 
     h2
         margin-bottom 20px
-
 
     .servicios
     display flex
@@ -163,7 +166,6 @@ h2
                 width 100%
                 height 100%
                 object-fit cover
-
 
 /*Ultimas Noticias*/
 .contenedor-np
@@ -263,8 +265,18 @@ h2
         border-radius radio
         margin 0 10px
         box-shadow 0px 4px 6px rgba(0, 0, 0, 0.1)
-        background-color #f9f9f9
-
+        background-color color-secundario
+        overflow hidden
+        .camp_img
+            width 100%
+            height 100%
+            display flex
+            justify-content center
+            align-items center
+            img
+                width 100%
+                height 100%
+                object-fit cover
 /* Youtube */
 .yt-seccion
     display flex
@@ -317,8 +329,9 @@ h2
 .hist-vida 
     display flex                
     gap 70px
+
     .historia
-        width 500px
+        width 50%
         display: grid
         grid-template-columns repeat(4, 1fr)
         grid-template-rows: 100px 200px 100px
@@ -400,63 +413,112 @@ h2
         padding-right: 10px
 
 /* PAGE-NOTICIA */
-.noticias-container
-    display grid
-    grid-template-columns repeat(2, 1fr)
-    grid-template-rows repeat(2, auto) 
-    gap 20px
-    max-width 100%
-    margin 0 auto
+.pg-noticia
+    margin-top 180px
+    margin-bottom 50px
+    text-align left
+    a
+        text-decoration none
 
-    .noti
-        padding 20px
-        background-color color-secundario
-        border-radius radio
-        text-align left
-        box-shadow 0px 4px 10px rgba(0, 0, 0, 0.2);
+    h3
+        color color-primario
+        font-size 25px
+    
+    .noticias-container
+        display grid
+        grid-template-columns repeat(2, 1fr)
+        grid-template-rows repeat(2, auto) 
+        gap 20px
+        max-width 100%
+        margin 0 auto
 
-        p
-            width 100%
-            display -webkit-box
-            -webkit-line-clamp 3
-            -webkit-box-orient vertical
-            overflow hidden
-            text-overflow ellipsis
+        .noti
+            padding 20px
+            background-color color-secundario
+            border-radius radio
+            text-align left
+            box-shadow 0px 4px 10px rgba(0, 0, 0, 0.2);
 
-    figure
-        background-color color-primario
-        border-radius radio-interno
-        height 150px
-        margin 0
-        
+            p
+                width: 100%; 
+                display: -webkit-box;
+                -webkit-line-clamp: 3; 
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color color-fuente
+
+        figure
+            background-color color-primario
+            border-radius radio-interno
+            height 270px
+            margin 0
+            
+            img
+                width 100%
+                height 270px
+                display block
+                border-radius radio-interno
+            
+        h2
+            color color-primario
+            text-align left
+            padding 0
+            margin 0
+            margin-top 1em
+            margin-bottom 0.5em
+
+        span
+            font-size 10px
+            color color-fuente
+
+    .cursos
+        display grid
+        grid-template-columns: repeat(3, 1fr);
+        gap 20px
+
+        .contenedor-cursos
+            display contents
+
+            ul
+                background-color white
+                padding 10px
+                list-style none
+                text-align center
+                margin 0
+
+/* Noticia Individual */
+.cont-img-main-not
+    margin-top 163px
+    display: flex
+    justify-content: center
+    width 100%
+    height 450px
+
+
+    #main-img-not
+        width 100%
+        overflow hidden
         img
             width 100%
-            height 150px
-            display block
-            border-radius radio-interno
-        
+            height 100%
+            object-fit cover
+
+
+.noticia-individual
+
+    div
+        margin-top 50px
+        margin-bottom 70px
     h2
-        color color-primario
         text-align left
-        padding 0
-        margin 0
-        margin-top 1em
-        margin-bottom 0.5em
+        margin-bottom 0.2em
 
     span
-        font-size 10px
-
-.cursos
-    display grid
-    grid-template-columns: repeat(3, 1fr);
-    gap 20px
-
-    .contenedor-cursos
-        display contents
-
-        ul
-            background-color white
-            padding 10px
-            list-style none
-            text-align center
-            margin 0
+        font-size 13px
+        color color-fuente
+        margin-bottom 2em
+    
+    p
+        color color-fuente
+        margin-block 1em

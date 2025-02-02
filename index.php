@@ -1,9 +1,9 @@
-<?php
-get_header();
-?>
 <main>
+    <?php
+        get_header();
+    ?>
     <section class="cont-img-main">
-        <div id="main-img">img</div>
+        <div id="main-img"><?php echo do_shortcode('[smartslider3 slider="4"]');?></div>
     </section>
     
     <h2>Nuestros Servicios</h2>
@@ -45,18 +45,9 @@ get_header();
             </ul>
         </div>
     </section>
+
     <h2>Ultimas Campañas</h2>
-    <section class="campanas">
-        <div class="cont-campanas" id="campana-1">
-            
-        </div>
-        <div class="cont-campanas" id="campana-2">
-            
-        </div>
-        <div class="cont-campanas" id="campana-3">
-           
-        </div>
-    </section><br>
+    <?php mostrar_campanas(); ?>
 
     <section class="yt-seccion">
         <div id="cont-video">
@@ -119,27 +110,10 @@ get_header();
         </div>
         <br>
     </section>
-<?php
-    if (have_posts()) : 
-        while (have_posts()) : the_post();
-            $ocultar_titulo = get_post_meta( get_the_ID(), '_ocultar_titulo', true );
-            // Mostrar el título solo si el checkbox no está marcado
-            $sClassOcultarTitle = '';
-            if ($ocultar_titulo) {
-                $sClassOcultarTitle = 'oculto';
-            }
-            echo '<h1 class="'.$sClassOcultarTitle.'">' . get_the_title() . '</h1>'; // Muestra el título de la página o entrada
-
-            if (has_post_thumbnail()) { 
-                the_post_thumbnail('large'); // Muestra la imagen destacada en tamaño 'large'
-            }
-            
-            the_content(); // Muestra el contenido de la página o entrada actual
-        endwhile;
-    endif;
-?>
+    <?php
+    get_footer();
+    ?>
 </main>
-<?php
-get_footer();
-?>
+
+
 

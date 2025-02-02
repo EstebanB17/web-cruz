@@ -1,34 +1,17 @@
-<?php get_header(); ?>
-
 <main>
-    <h1><?php the_title(); ?></h1>
-
-    <section class="pg-noticia">
-        <div class="noticias-container">
-            <?php
-                if (have_posts()) :
-                    while (have_posts()) : the_post();
-            ?>
-            <div class="noti">
-                <figure>
-                    <?php
-                        // Verifica si hay una imagen destacada y la muestra
-                        if (has_post_thumbnail()) {
-                            the_post_thumbnail();
-                        } else {
-                            echo '<img src="" alt="Imagen predeterminada">';
-                        }
-                    ?>
-                </figure>
-                <h2><?php the_title(); ?></h2>
-                <p><?php the_content(); ?></p>
-                <span><?php the_date(); ?></span>
-            </div>
-            <?php endwhile; else : ?>
-                <p>No se encontraron noticias.</p>
-            <?php endif; ?>
+    <?php get_header(); ?>
+    <section class="cont-img-main-not">
+        <div id="main-img-not">
+            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?php the_title(); ?>">
         </div>
     </section>
-</main>
 
-<?php get_footer(); ?>
+    <section class="noticia-individual">
+        <h2><?php the_title(); ?></h2>
+        <span><?php echo get_the_date('d \d\e F \d\e Y'); ?></span>
+        <div class="not-contenido">
+            <?php the_content(); ?>
+        </div>
+    </section>
+    <?php get_footer(); ?>
+</main>
