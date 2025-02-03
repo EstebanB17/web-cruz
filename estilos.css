@@ -23,12 +23,26 @@ h2 {
   width: 100%;
   height: 50px;
   align-items: center;
+  gap: 45px;
+  list-style-type: none;
 }
-.nav-head .info-busqueda p {
-  color: #fafafa;
+.nav-head .info-busqueda .menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  list-style-type: none;
+  width: 50%;
+}
+.nav-head .info-busqueda li {
+  display: inline-block;
   margin-left: 5%;
   padding: 0;
   font-size: 15px;
+  list-style: none;
+}
+.nav-head .info-busqueda li a {
+  text-decoration: none;
+  color: #fafafa;
 }
 .nav-head .info-busqueda #bar-busqueda {
   color: #dc090f;
@@ -102,9 +116,11 @@ h2 {
   width: 100%;
   height: 450px;
   background-color: #f00;
+  overflow: hidden;
 }
-.cont-img-main #main-img {
+.cont-img-main #slider {
   width: 100%;
+  height: 100%;
 }
 /* Servicios */
 .servicios {
@@ -187,6 +203,12 @@ h2 {
 }
 .contenedor-np .noticias .ultima-noticia p {
   margin-left: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #767676;
 }
 .contenedor-np .noticias .ultima-noticia #not-img-nueva {
   background-color: #000;
@@ -194,6 +216,12 @@ h2 {
   width: 100%;
   height: 300px;
   border-radius: 16px;
+  overflow: hidden;
+}
+.contenedor-np .noticias .ultima-noticia #not-img-nueva img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }
 .contenedor-np .noticias .cont-noticias {
   align-content: center;
@@ -212,6 +240,11 @@ h2 {
   margin: 10px auto;
   width: 100%;
   height: 120px;
+}
+.contenedor-np .noticias .cont-noticias .li-noticias #not-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }
 .contenedor-np .noticias .cont-noticias .li-noticias #not-img h3 {
   margin-left: 10px;
@@ -462,12 +495,12 @@ h2 {
 .pg-noticia .noticias-container figure {
   background-color: #dc090f;
   border-radius: 8px;
-  height: 270px;
+  height: 320px;
   margin: 0;
 }
 .pg-noticia .noticias-container figure img {
   width: 100%;
-  height: 270px;
+  height: 320px;
   display: block;
   border-radius: 8px;
 }

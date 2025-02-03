@@ -9,6 +9,7 @@ function hbp_register_menus() {
     register_nav_menus(
         array(
             'menu_principal' => 'Menú Principal',
+            'menu_secundario' => 'Menú Secundario'
         )
     );
 }
@@ -129,6 +130,72 @@ function mostrar_noticias() {
         echo '<p>No hay noticias disponibles.</p>';
     }
 }
+
+function mostrar_tres_ultimas_noticias() {
+    $args = array(
+        'post_type'      => 'post', // Tipo de contenido: Entradas
+        'posts_per_page' => 3, // Obtener las 3 últimas noticias
+        'tax_query'      => array(
+            array(
+                'taxonomy' => 'category', // Filtrar por categoría
+                'field'    => 'slug',
+                'terms'    => 'noticias', // Categoría "noticias"
+            ),
+        ),
+        'orderby'        => 'date', // Ordenar por fecha de publicación
+        'order'          => 'DESC' // Mostrar las más recientes primero
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        $contador = 0;
+
+        echo '<div class="noticias">';
+
+        while ($query->have_posts()) {
+            $query->the_post();
+            $imagen_destacada = get_the_post_thumbnail_url(get_the_ID(), 'full');
+            $titulo = get_the_title();
+            $contenido = get_the_excerpt();
+            $enlace = get_permalink();
+
+            if ($contador == 0) {
+                echo '<div class="ultima-noticia">';
+                echo '<a href="'.esc_url($enlace).'">';
+                echo '<div id="not-img-nueva">';
+                echo '<img src="'.esc_url($imagen_destacada).'" alt="'.esc_attr($titulo).'">';
+                echo '</div>';
+                echo '</a>';
+                echo '<h3><a href="'.esc_url($enlace).'">'.esc_html($titulo).'</a></h3>';
+                echo '<p>'.esc_html($contenido).'</p>';
+                echo '</div>';
+                echo '<div class="cont-noticias">';
+            } else {
+                // Otras noticias
+                echo '<div class="li-noticias">';
+                echo '<a href="'.esc_url($enlace).'">';
+                echo '<div id="not-img">';
+                echo '<img src="'.esc_url($imagen_destacada).'" alt="'.esc_attr($titulo).'">';
+                echo '</div>';
+                echo '</a>';
+                echo '<h3><a href="'.esc_url($enlace).'">'.esc_html($titulo).'</a></h3>';
+                echo '</div>';
+            }
+
+            $contador++;
+        }
+
+        echo '</div>'; 
+        echo '</div>'; 
+        wp_reset_postdata();
+    } else {
+        echo '<p>No hay noticias disponibles.</p>';
+    }
+}
+
+
+
 
 
 

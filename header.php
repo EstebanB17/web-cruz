@@ -16,14 +16,25 @@ $id_pagina = get_queried_object_id();
         <header>
             <section class="nav-head">
                 <div class="info-busqueda">
-                    <p>Email: caqueta@cruzrojacolombiana.org</p>
-                    <p>Teléfonos: 608 435 2929 - 323 266 4736</p>
+                    <div class="menu">
+                    <?php 
+                            wp_nav_menu(array(
+                                'theme_location' => 'menu_secundario',
+                                'container' => false, 
+                                'menu_class' => '', 
+                                'items_wrap' => '%3$s',
+                            ));
+                            ?>
+                    </div>
+                            
                     <input placeholder="Buscar" id="bar-busqueda" type="search">
                 </div>
 
                 <div class="navbar">
                     <div class="logo-cruz">
-                        <img src="https://pbs.twimg.com/ext_tw_video_thumb/1851645659331330049/pu/img/Ar1R7XEgbKCVxvn9?format=jpg&name=large">
+                        <a href="<?php echo home_url()?>">
+                            <img src="https://pbs.twimg.com/ext_tw_video_thumb/1851645659331330049/pu/img/Ar1R7XEgbKCVxvn9?format=jpg&name=large" alt="Logo">
+                        </a>
                     </div>
                     <div class="menu-container">
                         <button id="btn-donar">Donar</button>

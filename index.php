@@ -3,7 +3,7 @@
         get_header();
     ?>
     <section class="cont-img-main">
-        <div id="main-img"><?php echo do_shortcode('[smartslider3 slider="4"]');?></div>
+        <div id="slider"><?php echo do_shortcode('[smartslider3 slider="4"]');?></div>
     </section>
     
     <h2>Nuestros Servicios</h2>
@@ -12,38 +12,23 @@
 
     <h2>Últimas Noticias</h2>
     <section class="contenedor-np"> 
-            <div class="noticias">
-            <div class="ultima-noticia">
-                <div id="not-img-nueva"></div>
-                <h3>Noticia Nueva!</h3>
-                <p>Lorem ipsum dolor sit amet...</p>
+        <?php mostrar_tres_ultimas_noticias(); ?>
+        
+            <div class="preguntas">
+                <h3>Preguntas Frecuentes</h3>
+                <ul>
+                    <li><a href="">¿Cómo puedo ser voluntario?</a></li>
+                    <li><a href="">¿Cuáles son los horarios y líneas
+                        de atención?</a></li>
+                    <li><a href="">¿Dónde se encuentran ubicados?</a></li>
+                    <li><a href="">¿Cómo me puedo inscribir a los
+                        programas educativos?</a></li>
+                    <li><a href="">¿A donde me puedo comunicar
+                        para tener atención en un evento?</a></li>
+                    <li><a href="">¿Hacen acampamientos a
+                        simulacros?</a></li>
+                </ul>
             </div>
-            <div class="cont-noticias">
-                <div class="li-noticias">
-                    <div id="not-img"></div>
-                    <h3>Noticia 1</h3>
-                </div>
-                <div class="li-noticias">
-                    <div id="not-img"></div>
-                    <h3>Noticia 2</h3>
-                </div>
-            </div>
-        </div>
-        <div class="preguntas">
-            <h3>Preguntas Frecuentes</h3>
-            <ul>
-                <li><a href="">¿Cómo puedo ser voluntario?</a></li>
-                <li><a href="">¿Cuáles son los horarios y líneas
-                    de atención?</a></li>
-                <li><a href="">¿Dónde se encuentran ubicados?</a></li>
-                <li><a href="">¿Cómo me puedo inscribir a los
-                    programas educativos?</a></li>
-                <li><a href="">¿A donde me puedo comunicar
-                    para tener atención en un evento?</a></li>
-                <li><a href="">¿Hacen acampamientos a
-                    simulacros?</a></li>
-            </ul>
-        </div>
     </section>
 
     <h2>Ultimas Campañas</h2>
@@ -61,7 +46,11 @@
                 humanitarias, además de algunas
                 capacitaciones que de seguro serán muy
                 utiles para ti.</p>
+
+            <a href="https://www.youtube.com/@cruzrojacolombianacaqueta" target="_blank">
             <button id="sub-boton">Suscribirme</button>
+            </a>
+            
         </div>
     </section>
 

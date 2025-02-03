@@ -26,16 +26,30 @@ h2
     z-index 1000
 
     .info-busqueda
-        display flex
-        background-color: color-primario
+        display: flex; 
+        background-color: color-primario 
         width 100%
         height 50px
         align-items center
-        p
-            color color-secundario
-            margin-left 5%
-            padding 0
-            font-size 15px
+        gap 45px
+        list-style-type: none;
+
+        .menu
+                display: flex;
+                align-items: center
+                gap: 50px
+                list-style-type none
+                width 50%
+
+            li
+                display: inline-block; 
+                margin-left: 5%; 
+                padding: 0; 
+                font-size: 15px; 
+                list-style: none;
+                a
+                    text-decoration none
+                    color color-secundario
         
         #bar-busqueda
             color: color-primario
@@ -107,10 +121,11 @@ h2
     width 100%
     height 450px
     background-color red
+    overflow: hidden; 
 
-
-    #main-img
+    #slider
         width 100%
+        height 100%
 
 /* Servicios */
 .servicios
@@ -191,6 +206,12 @@ h2
 
             p
                 margin-left 15px
+                display: -webkit-box;
+                -webkit-line-clamp: 3; 
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color color-fuente
                 
             #not-img-nueva
                 background-color rgb(0, 0, 0)
@@ -198,6 +219,12 @@ h2
                 width 100%
                 height 300px
                 border-radius radio
+                overflow: hidden;
+                
+                img
+                    width: 100%;
+                    height: 100%;
+                    border-radius radio-interno
 
         .cont-noticias
             align-content center
@@ -216,6 +243,11 @@ h2
                     margin 10px auto
                     width 100%
                     height 120px
+                    img
+                        width 100%
+                        height 100%
+                        border-radius radio-interno
+
                     h3
                         margin-left 10px
 
@@ -451,12 +483,12 @@ h2
         figure
             background-color color-primario
             border-radius radio-interno
-            height 270px
+            height 320px
             margin 0
             
             img
                 width 100%
-                height 270px
+                height 320px
                 display block
                 border-radius radio-interno
             
