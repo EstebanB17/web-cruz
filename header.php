@@ -17,7 +17,7 @@ $id_pagina = get_queried_object_id();
             <section class="nav-head">
                 <div class="info-busqueda">
                     <div class="menu">
-                    <?php 
+                        <?php 
                             wp_nav_menu(array(
                                 'theme_location' => 'menu_secundario',
                                 'container' => false, 
@@ -37,7 +37,13 @@ $id_pagina = get_queried_object_id();
                         </a>
                     </div>
                     <div class="menu-container">
-                        <button id="btn-donar">Donar</button>
+                        <button id="btn-donar"><?php wp_nav_menu(array(
+                                'theme_location' => 'menu_acciones',
+                                'container' => false, 
+                                'menu_class' => '', 
+                                'items_wrap' => '%3$s',
+                            ));
+                            ?></button>
                         <div class="menu">
                             <?php 
                             wp_nav_menu(array(

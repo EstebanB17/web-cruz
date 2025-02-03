@@ -86,6 +86,13 @@ h2
                 cursor pointer
                 margin-bottom 10px
                 width 20%
+                li
+                    a
+                        text-decoration none
+                        color color-secundario
+                        &:hover
+                            color color-fuente
+
             .menu
                 display: flex;
                 align-items: center
@@ -232,7 +239,6 @@ h2
                             text-decoration none
                             color color-primario
 
-
 .preguntas
     display flex
     flex-direction column
@@ -285,6 +291,7 @@ h2
             display flex
             justify-content center
             align-items center
+            overflow hidden
             img
                 width 100%
                 height 100%
@@ -393,10 +400,14 @@ h2
     display flex
     .mapa
         margin 10px
-        background-color: black
         width: 70%
         height 350px
         border-radius radio
+        overflow hidden
+        img
+            width 100%
+            height 100%
+            object-fit cover
 
     .direccion
         width 30%
@@ -524,7 +535,7 @@ h2
             width 100%
             height 100%
             object-fit cover
-            
+
 .noticia-individual
     div
         margin-top 50px
@@ -539,3 +550,56 @@ h2
     p
         color color-fuente
         margin-block 1em
+
+/* conocenos */
+.conocenos
+    
+    h2
+        text-align left
+        margin-bottom 1em
+    
+    p
+        font-size 15px
+        margin-bottom 1em
+        color color-fuente
+
+.mision-vision
+    margin-bottom 50px
+    .container-mv
+        display grid
+        grid-template-columns repeat(2, 1fr)
+        grid-template-rows repeat(2, auto) 
+        gap 20px
+        max-width 100%
+        margin 0 auto
+
+        .cont
+            padding 20px
+            background-color color-secundario
+            border-radius radio
+            text-align left
+
+
+            p
+                width 100%
+                color color-fuente
+
+        figure
+            background-color color-primario
+            border-radius radio-interno
+            height 100%
+            margin 0
+            
+            img
+                width 100%
+                height 100%
+                display block
+                border-radius radio-interno
+            
+        h2
+            color color-primario
+            text-align left
+            padding 0
+            margin 0
+            margin-top 1em
+            margin-bottom 0.5em

@@ -47,23 +47,10 @@
     
     <h2>Donde nos Encuentras </h2>
     <section class="ubicacion">
-        <div class="mapa">
-            <img src="" alt="">
-        </div>
-        <div class="direccion">
-            <div id="dir">
-                <h3>Sede Principal</h3>
-                <p>Cra. 16 #15-70, Florencia, Caquetá</p>
-                <p>608 433 8330</p>
-                <p>educacion@cruzrojacaqueta.org</p> 
-            </div>
-            <div id="dir">
-                <h3>Instución Educativa</h3>
-                <p>Cra. 16 #15-70, Florencia, Caquetá</p>
-                <p>608 433 8330</p>
-                <p>educacion@cruzrojacaqueta.org</p>
-            </div>
-        </div>
+        <figure class="mapa">
+            <img src="https://motor.elpais.com/wp-content/uploads/2022/01/google-maps-22.jpg" alt="">
+        </figure>
+        <?php mostrar_ubicaciones(); ?>
         <br>
     </section>
     <?php

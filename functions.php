@@ -9,7 +9,9 @@ function hbp_register_menus() {
     register_nav_menus(
         array(
             'menu_principal' => 'Menú Principal',
-            'menu_secundario' => 'Menú Secundario'
+            'menu_secundario' => 'Menú Secundario',
+            'menu_acciones' => 'Menú Acciones',
+        
         )
     );
 }
@@ -91,15 +93,10 @@ function mostrar_campanas() {
 
 function mostrar_noticias() {
     $args = array(
-        'post_type'      => 'post', 
-        'posts_per_page' => -1, 
-        'tax_query'      => array(
-            array(
-                'taxonomy' => 'category', 
-                'field'    => 'slug',
-                'terms'    => 'noticias',
-            ),
-        ),
+        'post_type'      => 'post',  // Obtener entradas (posts)
+        'post_status'    => 'publish', // Solo entradas publicadas
+        'orderby'        => 'date',   // Ordenar por fecha de publicación
+        'order'          => 'DESC'    // Mostrar las más recientes primero
     );
 
     $query = new WP_Query($args);
@@ -108,13 +105,13 @@ function mostrar_noticias() {
         echo '<div class="noticias-container">';
         while ($query->have_posts()) {
             $query->the_post();
-            $imagen_destacada = get_the_post_thumbnail_url(get_the_ID(), 'full');
-            $titulo = get_the_title();
-            $contenido = get_the_excerpt(); 
-            $fecha = get_the_date('d M Y'); 
-            $enlace = get_permalink();
+            $imagen_destacada = get_the_post_thumbnail_url(get_the_ID(), 'full'); // Obtener imagen destacada
+            $titulo = get_the_title(); // Obtener título
+            $contenido = get_the_excerpt(); // Obtener extracto de la entrada
+            $fecha = get_the_date('d M Y'); // Obtener fecha de publicación
+            $enlace = get_permalink(); // Obtener enlace de la entrada
 
-            
+            // Estructura HTML respetando la original
             echo '<div class="noti">';
             echo '<a href="'.esc_url($enlace).'">'; // Enlace que rodea toda la tarjeta
             echo '<figure><img src="'.esc_url($imagen_destacada).'" alt="'.esc_attr($titulo).'"/></figure>';
@@ -134,14 +131,7 @@ function mostrar_noticias() {
 function mostrar_tres_ultimas_noticias() {
     $args = array(
         'post_type'      => 'post', // Tipo de contenido: Entradas
-        'posts_per_page' => 3, // Obtener las 3 últimas noticias
-        'tax_query'      => array(
-            array(
-                'taxonomy' => 'category', // Filtrar por categoría
-                'field'    => 'slug',
-                'terms'    => 'noticias', // Categoría "noticias"
-            ),
-        ),
+        'posts_per_page' => 3, // Obtener las 3 últimas entradas
         'orderby'        => 'date', // Ordenar por fecha de publicación
         'order'          => 'DESC' // Mostrar las más recientes primero
     );
@@ -186,13 +176,14 @@ function mostrar_tres_ultimas_noticias() {
             $contador++;
         }
 
-        echo '</div>'; 
-        echo '</div>'; 
+        echo '</div>'; // Cierre de .cont-noticias
+        echo '</div>'; // Cierre de .noticias
         wp_reset_postdata();
     } else {
         echo '<p>No hay noticias disponibles.</p>';
     }
 }
+
 
 function mostrar_preguntas_frecuentes() {
     $args = array(
@@ -273,5 +264,48 @@ function mostrar_historias_de_vida() {
         wp_reset_postdata();
     } else {
         echo '<p>No hay historias de vida disponibles.</p>';
+    }
+}
+
+function mostrar_ubicaciones() {
+    $args = array(
+        'post_type'      => 'page', // Tipo de contenido: Páginas
+        'posts_per_page' => 2, // Obtener máximo 2 páginas
+        'tax_query'      => array(
+            array(
+                'taxonomy' => 'category', // Filtrar por categoría
+                'field'    => 'slug',
+                'terms'    => 'ubicaciones', // Categoría "ubicaciones"
+            ),
+        ),
+        'orderby'        => 'date', // Ordenar por fecha de publicación
+        'order'          => 'DESC' // Mostrar las más recientes primero
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            $titulo = get_the_title();
+            $contenido = get_the_content(); // Obtener el contenido completo de la página
+
+            // Dividir el contenido en párrafos usando la función wpautop()
+            $contenido_dividido = wpautop($contenido); // wpautop agrega <p> a los párrafos automáticamente
+
+            // Mostrar la estructura HTML respetando los párrafos
+            echo '<div class="direccion">';
+            echo '<div id="dir">';
+            echo '<h3>'.esc_html($titulo).'</h3>';
+
+            // Mostrar los párrafos individualmente
+            echo $contenido_dividido;
+
+            echo '</div>';
+            echo '</div>';
+        }
+        wp_reset_postdata();
+    } else {
+        echo '<p>No hay ubicaciones disponibles.</p>';
     }
 }
