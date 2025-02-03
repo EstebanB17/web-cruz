@@ -201,6 +201,10 @@ h2 {
 .contenedor-np .noticias .ultima-noticia h3 {
   margin-left: 15px;
 }
+.contenedor-np .noticias .ultima-noticia h3 a {
+  text-decoration: none;
+  color: #dc090f;
+}
 .contenedor-np .noticias .ultima-noticia p {
   margin-left: 15px;
   display: -webkit-box;
@@ -249,12 +253,19 @@ h2 {
 .contenedor-np .noticias .cont-noticias .li-noticias #not-img h3 {
   margin-left: 10px;
 }
+.contenedor-np .noticias .cont-noticias .li-noticias #not-img h3 a {
+  text-decoration: none;
+  color: #dc090f;
+}
 .preguntas {
   display: flex;
   flex-direction: column;
   width: 30%;
   justify-content: center;
   align-items: center;
+}
+.preguntas h3 {
+  color: #dc090f;
 }
 .preguntas ul {
   list-style-type: none;
@@ -365,6 +376,7 @@ h2 {
 .yt-seccion #desc-video #sub-boton:hover {
   color: #dc090f;
 }
+/*Hisotias de Vida*/
 .hist-vida {
   display: flex;
   gap: 70px;
@@ -386,6 +398,12 @@ h2 {
   z-index: 2;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+}
+.hist-vida .historia figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .hist-vida .historia .contenido {
   background-color: #fafafa;
@@ -396,7 +414,23 @@ h2 {
   grid-row: 1/4;
   display: flex;
   align-items: center;
-  padding: 40%;
+}
+.hist-vida .historia .contenido article {
+  width: 100%;
+  margin-left: 35%;
+  margin-right: 25px;
+}
+.hist-vida .historia .contenido article h2 {
+  text-align: left;
+  margin-bottom: 0.5em;
+}
+.hist-vida .historia .contenido article h2 a {
+  text-decoration: none;
+  color: #dc090f;
+}
+.hist-vida .historia .contenido article p {
+  font-size: 14px;
+  color: #767676;
 }
 /* Ubicación */
 .ubicacion {
@@ -436,24 +470,30 @@ h2 {
 }
 .footer {
   background-color: #232323;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 90px;
   color: #fafafa;
-  margin-inline: -80px;
-}
-.footer .izquierda,
-.footer .derecha {
-  width: 50%;
-  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
 }
 .footer .izquierda {
-  padding-left: 10px;
+  text-align: center;
+  width: 50%;
+}
+.footer .izquierda p {
+  margin: 0;
 }
 .footer .derecha {
-  padding-right: 10px;
+  text-align: center;
+  width: 50%;
+}
+.footer .derecha p {
+  margin: 0;
 }
 /* PAGE-NOTICIA */
 .pg-noticia {

@@ -194,9 +194,84 @@ function mostrar_tres_ultimas_noticias() {
     }
 }
 
+function mostrar_preguntas_frecuentes() {
+    $args = array(
+        'post_type'      => 'page', 
+        'posts_per_page' => -1, 
+        'tax_query'      => array(
+            array(
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => 'preguntas-frecuentes', 
+            ),
+        ),
+        'orderby'        => 'title', 
+        'order'          => 'ASC' 
+    );
 
+    $query = new WP_Query($args);
 
+    if ($query->have_posts()) {
+        echo '<div class="preguntas">';
+        echo '<h3>Preguntas Frecuentes</h3>';
+        echo '<ul>';
 
+        while ($query->have_posts()) {
+            $query->the_post();
+            $titulo = get_the_title();
+            $enlace = get_permalink();
 
+            echo '<li><a href="'.esc_url($enlace).'">'.esc_html($titulo).'</a></li>';
+        }
 
+        echo '</ul>';
+        echo '</div>';
 
+        wp_reset_postdata();
+    } else {
+        echo '<p>No hay preguntas frecuentes disponibles.</p>';
+    }
+}
+
+function mostrar_historias_de_vida() {
+    $args = array(
+        'post_type'      => 'page', 
+        'posts_per_page' => 2,
+        'tax_query'      => array(
+            array(
+                'taxonomy' => 'category', 
+                'field'    => 'slug',
+                'terms'    => 'historias-de-vida', 
+            ),
+        ),
+        'orderby'        => 'date', 
+        'order'          => 'DESC' 
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            $imagen_destacada = get_the_post_thumbnail_url(get_the_ID(), 'full');
+            $titulo = get_the_title();
+            $contenido = get_the_excerpt();
+            $enlace = get_permalink();
+
+            echo '<div class="historia">';
+            echo '<figure>';
+            echo '<img src="'.esc_url($imagen_destacada).'" alt="'.esc_attr($titulo).'">';
+            echo '</figure>';
+            echo '<section class="contenido">';
+            echo '<article>';
+            echo '<h2><a href="'.esc_url($enlace).'">'.esc_html($titulo).'</a></h2>';
+            echo '<p>'.esc_html($contenido).'</p>';
+            echo '</article>';
+            echo '</section>';
+            echo '</div>';
+        }
+        wp_reset_postdata();
+    } else {
+        echo '<p>No hay historias de vida disponibles.</p>';
+    }
+}

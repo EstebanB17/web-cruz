@@ -16,7 +16,6 @@ h2
     color color-primario
     text-align center
     margin-block 40px
-
 /* Barra de navegación */
 .nav-head
     position fixed
@@ -24,7 +23,6 @@ h2
     left 0
     width 100%
     z-index 1000
-
     .info-busqueda
         display: flex; 
         background-color: color-primario 
@@ -33,14 +31,12 @@ h2
         align-items center
         gap 45px
         list-style-type: none;
-
         .menu
                 display: flex;
                 align-items: center
                 gap: 50px
                 list-style-type none
                 width 50%
-
             li
                 display: inline-block; 
                 margin-left: 5%; 
@@ -50,7 +46,6 @@ h2
                 a
                     text-decoration none
                     color color-secundario
-        
         #bar-busqueda
             color: color-primario
             margin-left 40%
@@ -59,8 +54,7 @@ h2
             width 17%
             border-radius 2px
             border 0
-            padding-left 10px
-            
+            padding-left 10px  
     .navbar
         display flex
         align-items center
@@ -69,7 +63,6 @@ h2
         height: 90px
         background-color color-secundario
         border-bottom 3px solid color-primario
-        
         .logo-cruz
             display flex
             align-items center
@@ -77,13 +70,11 @@ h2
             border-radius: 5px
             img
                 height 90px
-
         .menu-container
             display flex
             flex-direction column
             align-items: flex-end
             list-style-type none
-
             #btn-donar
                 border-radius 20px
                 border none
@@ -111,9 +102,7 @@ h2
                     color color-fuente
                     &:hover
                         color color-primario
-
 /* Contenido */
-
 .cont-img-main
     margin-top 165px
     display: flex
@@ -122,7 +111,6 @@ h2
     height 450px
     background-color red
     overflow: hidden; 
-
     #slider
         width 100%
         height 100%
@@ -133,19 +121,15 @@ h2
     flex-direction row
     align-items center
     text-align center
-
     h2
         margin-bottom 20px
-
     .servicios
     display flex
     flex-direction row
     align-items center
     text-align center
-
     h2
         margin-bottom 20px
-
     .cont-servicios
         justify-content center
         align-items center
@@ -157,16 +141,13 @@ h2
         p
             color color-primario
             font-weight: bold
-        
         h3
-            
             a
                 text-decoration none
                 color color-primario
                 font-weight bold
                 &:hover
                     color color-fuente
-            
         #serv-img
             background-color black
             border-radius 10px
@@ -193,7 +174,6 @@ h2
         gap 10px
         width 70%
         padding 10px
-
         .ultima-noticia
             border-radius radio
             grid-column 1 / 2
@@ -203,7 +183,9 @@ h2
             background-color color-secundario
             h3
                 margin-left 15px
-
+                a
+                    text-decoration none
+                    color color-primario
             p
                 margin-left 15px
                 display: -webkit-box;
@@ -212,7 +194,6 @@ h2
                 overflow: hidden;
                 text-overflow: ellipsis;
                 color color-fuente
-                
             #not-img-nueva
                 background-color rgb(0, 0, 0)
                 margin 10px auto
@@ -220,19 +201,16 @@ h2
                 height 300px
                 border-radius radio
                 overflow: hidden;
-                
                 img
                     width: 100%;
                     height: 100%;
                     border-radius radio-interno
-
         .cont-noticias
             align-content center
             .li-noticias
                 background-color color-secundario
                 border-radius radio
                 color color-fuente
-
                 margin 10px
                 padding 10px
                 box-sizing border-box
@@ -247,9 +225,13 @@ h2
                         width 100%
                         height 100%
                         border-radius radio-interno
-
                     h3
                         margin-left 10px
+                        
+                        a
+                            text-decoration none
+                            color color-primario
+
 
 .preguntas
     display flex
@@ -257,6 +239,8 @@ h2
     width 30%
     justify-content: center
     align-items: center
+    h3
+        color color-primario
     ul
         list-style-type none
         padding 0
@@ -266,12 +250,10 @@ h2
         height 100%
         margin-bottom 40px
         text-align center
-
         li
             border-bottom 1px solid color-bordes
-            padding 15px 0
-                
-            a   
+            padding 15px 0  
+            a  
                 text-decoration none
                 font-weight bold
                 color color-fuente
@@ -284,10 +266,8 @@ h2
     flex-direction row
     align-items center
     text-align center
-
     h2
         margin-bottom 20px
-
     .cont-campanas
         display flex
         justify-content center
@@ -309,6 +289,7 @@ h2
                 width 100%
                 height 100%
                 object-fit cover
+
 /* Youtube */
 .yt-seccion
     display flex
@@ -331,8 +312,7 @@ h2
             position absolute
             top: 50%
             left: 50%
-            transform: translate(-50%, -50%)
-            
+            transform: translate(-50%, -50%)     
     #desc-video 
         width 50%
         padding 1rem
@@ -340,13 +320,11 @@ h2
         h3
             margin-block 50px
             font-size: 25px
-
         p
             text-align justify
             margin-inline 15%
             margin-block: 100px
             font-size: 25px
-
         #sub-boton
             background-color color-secundario
             color color-fuente
@@ -358,6 +336,8 @@ h2
             font-size 15px
             &:hover
                 color color-primario
+
+/*Hisotias de Vida*/
 .hist-vida 
     display flex                
     gap 70px
@@ -379,6 +359,11 @@ h2
             z-index 2
             margin 0
             padding 0
+            overflow hidden
+            img
+                width 100%
+                height 100%
+                object-fit cover
 
         .contenido
             background-color color-secundario
@@ -389,7 +374,19 @@ h2
             grid-row 1 / 4
             display flex
             align-items center
-            padding 40%
+            article
+                width 100%
+                margin-left 35%
+                margin-right 25px
+                h2
+                    text-align left
+                    margin-bottom 0.5em
+                    a
+                        text-decoration none
+                        color color-primario
+                p
+                    font-size 14px
+                    color color-fuente
 
 /* Ubicación */
 .ubicacion
@@ -426,23 +423,27 @@ h2
 
 .footer
     background-color color-footer
-    position relative
+    position absolute 
+    left 0 
+    right: 0
     display flex
-    justify-content space-between
-    align-items center
+    justify-content: space-between
+    align-items: center
     height 90px
-    color color-secundario
-    margin-inline -80px
-
-    .izquierda, .derecha
-        width: 50%
-        text-align center
+    color color-secundario 
+    padding 10px
+    margin-top 20px
 
     .izquierda
-        padding-left: 10px
-
+        text-align: center; 
+        width 50%
+        p
+            margin 0
     .derecha
-        padding-right: 10px
+        text-align center 
+        width: 50%
+        p
+            margin: 0 
 
 /* PAGE-NOTICIA */
 .pg-noticia
@@ -451,7 +452,6 @@ h2
     text-align left
     a
         text-decoration none
-
     h3
         color color-primario
         font-size 25px
@@ -463,14 +463,12 @@ h2
         gap 20px
         max-width 100%
         margin 0 auto
-
         .noti
             padding 20px
             background-color color-secundario
             border-radius radio
             text-align left
             box-shadow 0px 4px 10px rgba(0, 0, 0, 0.2);
-
             p
                 width: 100%; 
                 display: -webkit-box;
@@ -479,19 +477,16 @@ h2
                 overflow: hidden;
                 text-overflow: ellipsis;
                 color color-fuente
-
         figure
             background-color color-primario
             border-radius radio-interno
             height 320px
             margin 0
-            
             img
                 width 100%
                 height 320px
                 display block
                 border-radius radio-interno
-            
         h2
             color color-primario
             text-align left
@@ -499,19 +494,15 @@ h2
             margin 0
             margin-top 1em
             margin-bottom 0.5em
-
         span
             font-size 10px
             color color-fuente
-
     .cursos
         display grid
         grid-template-columns: repeat(3, 1fr);
         gap 20px
-
         .contenedor-cursos
             display contents
-
             ul
                 background-color white
                 padding 10px
@@ -526,8 +517,6 @@ h2
     justify-content: center
     width 100%
     height 450px
-
-
     #main-img-not
         width 100%
         overflow hidden
@@ -535,22 +524,18 @@ h2
             width 100%
             height 100%
             object-fit cover
-
-
+            
 .noticia-individual
-
     div
         margin-top 50px
         margin-bottom 70px
     h2
         text-align left
         margin-bottom 0.2em
-
     span
         font-size 13px
         color color-fuente
         margin-bottom 2em
-    
     p
         color color-fuente
         margin-block 1em

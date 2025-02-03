@@ -13,22 +13,7 @@
     <h2>Últimas Noticias</h2>
     <section class="contenedor-np"> 
         <?php mostrar_tres_ultimas_noticias(); ?>
-        
-            <div class="preguntas">
-                <h3>Preguntas Frecuentes</h3>
-                <ul>
-                    <li><a href="">¿Cómo puedo ser voluntario?</a></li>
-                    <li><a href="">¿Cuáles son los horarios y líneas
-                        de atención?</a></li>
-                    <li><a href="">¿Dónde se encuentran ubicados?</a></li>
-                    <li><a href="">¿Cómo me puedo inscribir a los
-                        programas educativos?</a></li>
-                    <li><a href="">¿A donde me puedo comunicar
-                        para tener atención en un evento?</a></li>
-                    <li><a href="">¿Hacen acampamientos a
-                        simulacros?</a></li>
-                </ul>
-            </div>
+        <?php mostrar_preguntas_frecuentes(); ?>
     </section>
 
     <h2>Ultimas Campañas</h2>
@@ -56,32 +41,14 @@
 
     <h2>Historias de vida</h2>
     <section class="hist-vida">
-        <div class="historia">
-            <figure>
-                <img src="" alt="">
-            </figure>
-            <section class="contenido">
-                <article>
-                    <p>Historia</p>
-                </article>
-            </section>
-        </div>
+    <?php mostrar_historias_de_vida(); ?>
 
-        <div class="historia">
-            <figure>
-                <img src="" alt="">
-            </figure>
-            <section class="contenido">
-                <article>
-                    <p>Historia</p>
-                </article>
-            </section>
-        </div>
-    </section>
+    </section><br><br>
     
     <h2>Donde nos Encuentras </h2>
     <section class="ubicacion">
         <div class="mapa">
+            <img src="" alt="">
         </div>
         <div class="direccion">
             <div id="dir">
@@ -103,6 +70,3 @@
     get_footer();
     ?>
 </main>
-
-
-
